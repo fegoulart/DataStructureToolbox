@@ -4,22 +4,56 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.*;
+
 import com.google.gson.*;
 
-class Node{
-    Node left,right;
+class Node {
+    Node left, right;
     int data;
-    Node(int data){
-        this.data=data;
-        left=right=null;
+
+    Node(int data) {
+        this.data = data;
+        left = right = null;
     }
 }
+
+//class TreeNode {
+//    public String Name;
+//    public TreeNode[] children;
+//}
 
 public class Main {
 
     /****/
+    /* Trees */
 
-    public static int getHeight(Node root){
+    void inOrderTraversal(Node node) {
+        if (node != null) {
+            inOrderTraversal(node.left);
+            //visit(node);
+            inOrderTraversal(node.right);
+        }
+    }
+
+    void preOrderTraversal(Node node) {
+        if (node != null) {
+            //visit(node);
+            preOrderTraversal(node.left);
+            preOrderTraversal(node.right);
+        }
+    }
+
+    void postOrderTraversal(Node node) {
+        if (node != null) {
+            postOrderTraversal(node.left);
+            postOrderTraversal(node.right);
+            //visit(node);
+        }
+    }
+
+    /****/
+
+    public static int getHeight(Node root) {
 
         if (root == null) {
             return -1;
@@ -29,23 +63,21 @@ public class Main {
             return 0;
         }
 
-        return 1 + Math.max(getHeight(root.left),getHeight(root.right));
+        return 1 + Math.max(getHeight(root.left), getHeight(root.right));
 
     }
 
-    public static Node insert(Node root,int data){
-        if(root==null){
+    public static Node insert(Node root, int data) {
+        if (root == null) {
             return new Node(data);
-        }
-        else{
+        } else {
             Node cur;
-            if(data<=root.data){
-                cur=insert(root.left,data);
-                root.left=cur;
-            }
-            else{
-                cur=insert(root.right,data);
-                root.right=cur;
+            if (data <= root.data) {
+                cur = insert(root.left, data);
+                root.left = cur;
+            } else {
+                cur = insert(root.right, data);
+                root.right = cur;
             }
             return root;
         }
@@ -431,56 +463,64 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
+        Solution.generalizedGCD(2, new int[]{2, 9});
 
-        List<List<Integer>> css = new ArrayList<>();
+//        int[] input = { 1,0,0,0,0,1,0,0};
+//        int days = 1;
+//
+//        List<Integer> myList = Solution.cellCompete(input,days);
 
-        for (int i = 0; i < n; i++) {
-            String[] cssRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
-
-            List<Integer> cssRowItems = new ArrayList<>();
-
-            for (int j = 0; j < 2; j++) {
-                int cssItem = Integer.parseInt(cssRowTempItems[j]);
-                cssRowItems.add(cssItem);
-            }
-
-            css.add(cssRowItems);
-        }
-
-        int m = Integer.parseInt(bufferedReader.readLine().trim());
-
-        List<List<Integer>> customers = new ArrayList<>();
-
-        for (int i = 0; i < m; i++) {
-            String[] customersRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
-
-            List<Integer> customersRowItems = new ArrayList<>();
-
-            for (int j = 0; j < 2; j++) {
-                int customersItem = Integer.parseInt(customersRowTempItems[j]);
-                customersRowItems.add(customersItem);
-            }
-
-            customers.add(customersRowItems);
-        }
-
-        int vacant_cssCount = Integer.parseInt(bufferedReader.readLine().trim());
-
-        String[] vacant_cssItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
-
-        List<Integer> vacant_css = new ArrayList<>();
-
-        for (int i = 0; i < vacant_cssCount; i++) {
-            int vacant_cssItem = Integer.parseInt(vacant_cssItems[i]);
-            vacant_css.add(vacant_cssItem);
-        }
-
-        //int cs_distribution = csRush(n, m, css, customers, vacant_css);
-
-        bufferedReader.close();
+//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int n = Integer.parseInt(bufferedReader.readLine().trim());
+//
+//        List<List<Integer>> css = new ArrayList<>();
+//
+//        for (int i = 0; i < n; i++) {
+//            String[] cssRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+//
+//            List<Integer> cssRowItems = new ArrayList<>();
+//
+//            for (int j = 0; j < 2; j++) {
+//                int cssItem = Integer.parseInt(cssRowTempItems[j]);
+//                cssRowItems.add(cssItem);
+//            }
+//
+//            css.add(cssRowItems);
+//        }
+//
+//        int m = Integer.parseInt(bufferedReader.readLine().trim());
+//
+//        List<List<Integer>> customers = new ArrayList<>();
+//
+//        for (int i = 0; i < m; i++) {
+//            String[] customersRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+//
+//            List<Integer> customersRowItems = new ArrayList<>();
+//
+//            for (int j = 0; j < 2; j++) {
+//                int customersItem = Integer.parseInt(customersRowTempItems[j]);
+//                customersRowItems.add(customersItem);
+//            }
+//
+//            customers.add(customersRowItems);
+//        }
+//
+//        int vacant_cssCount = Integer.parseInt(bufferedReader.readLine().trim());
+//
+//        String[] vacant_cssItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+//
+//        List<Integer> vacant_css = new ArrayList<>();
+//
+//        for (int i = 0; i < vacant_cssCount; i++) {
+//            int vacant_cssItem = Integer.parseInt(vacant_cssItems[i]);
+//            vacant_css.add(vacant_cssItem);
+//        }
+//
+//        //int cs_distribution = csRush(n, m, css, customers, vacant_css);
+//
+//        bufferedReader.close();
 
     }
 
