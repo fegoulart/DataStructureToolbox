@@ -99,3 +99,9 @@
 |             | FIND MIN     | 1            |
 |             | HEAPIFY      | n            |
 |             | DELETE       | log n        |
+| ArrayList   | GET          | 1            |
+|             | ADD          | 1            |
+|             | REMOVE       | n            |
+| LinkedList  | GET          | n            |
+|             | ADD          | 1 (amortized)|
+|             | REMOVE       | n            |

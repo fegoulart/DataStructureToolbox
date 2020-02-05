@@ -24,6 +24,142 @@ class Node {
 
 public class Main {
 
+    /** Arrays ***/
+
+    // 2D: int[][] twoD_arr = new int[10][20];
+
+    /*
+    public class MyClass {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    for (int i = 0; i < cars.size(); i++) {
+      System.out.println(cars.get(i));
+    }
+  }
+}
+
+List<Integer> listNumbers = new ArrayList<>();
+List<String> linkedWords = new LinkedList<>();
+
+
+ArrayList al = new ArrayList();
+al.add(3);
+al.add(2);
+al.add(1);
+al.add(4);
+al.add(5);
+al.add(6);
+al.add(6);
+Iterator iter1 = al.iterator();
+while(iter1.hasNext()){
+System.out.println(iter1.next());
+}
+
+LinkedList ll = new LinkedList();
+ll.add(3);
+ll.add(2);
+ll.add(1);
+ll.add(4);
+ll.add(5);
+ll.add(6);
+ll.add(6);
+Iterator iter2 = al.iterator();
+while(iter2.hasNext()){
+System.out.println(iter2.next());
+}
+     */
+
+    /**** Hashmaps ***/
+    /*
+    HashMapis implemented as a hash table, and there is no ordering on keys or values.
+    TreeMap is implemented based on red-black tree structure, and it is ordered by the key. --> PRECISA DE COMPARABLE
+    LinkedHashMap preserves the insertion order
+    Hashtable  is synchronized in contrast to HashMap -> overhead for synchronization
+    */
+
+    /*
+
+    ATENCAO:
+
+    1) If two objects are equal, then they must have the same hash code.
+    2) If two objects have the same hash code, they may or may not be equal.
+     */
+
+
+    /**** hashmap
+     *
+     *
+     * public static void main(String[] args) {
+     * 		HashMap<Dog, Integer> hashMap = new HashMap<Dog, Integer>();
+     * 		Dog d1 = new Dog("red");
+     * 		Dog d2 = new Dog("black");
+     * 		Dog d3 = new Dog("white");
+     * 		Dog d4 = new Dog("white");
+     *
+     * 		hashMap.put(d1, 10);
+     * 		hashMap.put(d2, 15);
+     * 		hashMap.put(d3, 5);
+     * 		hashMap.put(d4, 20);
+     *
+     * 		//print size
+     * 		System.out.println(hashMap.size());
+     *
+     * 		//loop HashMap
+     * 		for (Entry<Dog, Integer> entry : hashMap.entrySet()) {
+     * 			System.out.println(entry.getKey().toString() + " - " + entry.getValue());
+     *                }* 	}
+     */
+
+    /* TREEMAPS */
+
+    /*
+
+    class Dog implements Comparable<Dog>{
+	String color;
+	int size;
+
+	Dog(String c, int s) {
+		color = c;
+		size = s;
+	}
+
+	public String toString(){
+		return color + " dog";
+	}
+
+	@Override
+	public int compareTo(Dog o) {
+		return  o.size - this.size;
+	}
+}
+
+public class TestTreeMap {
+	public static void main(String[] args) {
+		Dog d1 = new Dog("red", 30);
+		Dog d2 = new Dog("black", 20);
+		Dog d3 = new Dog("white", 10);
+		Dog d4 = new Dog("white", 10);
+
+		TreeMap<Dog, Integer> treeMap = new TreeMap<Dog, Integer>();
+		treeMap.put(d1, 10);
+		treeMap.put(d2, 15);
+		treeMap.put(d3, 5);
+		treeMap.put(d4, 20);
+
+		for (Entry<Dog, Integer> entry : treeMap.entrySet()) {
+			System.out.println(entry.getKey() + " - " + entry.getValue());
+		}
+	}
+}
+
+     */
+
+
+
     /*** Graphs ***/
 
     public static class Graph {
@@ -40,7 +176,7 @@ public class Main {
         public void addEdge(int first, int second) {
             adjLst.get(first).add(second);
             adjLst.get(second).add(first);
-        // For undirected graph, you gotta add edges from both sides.
+            // For undirected graph, you gotta add edges from both sides.
         }
 
         public int[] shortestReach(int startId) { // 0 indexed
