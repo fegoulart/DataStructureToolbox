@@ -105,3 +105,11 @@
 | LinkedList  | GET          | n            |
 |             | ADD          | 1 (amortized)|
 |             | REMOVE       | n            |
+
+## SOLID
+
+* Single responsability - Não pode haver mais de uma razão para uma classe mudar. Exemplos de razões de mudanças: formato da mensagem (Json/XML), protocolo (Html), segurança na comunicação (autenticação). Se dentro do controller temos a lógica de validação de usuário, precisamos criar uma nova classe UserValidator.
+* Open Closed  - Entidades (classes, módulos, métodos) devem estar abertas para extensão, mas fechadas para modificações. Exemplo: ter uma classe abstrata mãe para extensão.
+* Liskov Substitution - Deve ser possível substituir as classes base pelas classes filhas sem alteração de comportamento / características do software. Exemplo: Se estendemos retangulo para criar a classe quadrado, e a classe retangulo já tem um teste feito para que a altura tenha 20 e a largura tenha 30. Vai falhar para quadrado. Solução: Quadrado não deve mais estender de retangulo, pois o comportamento de um retangulo é distinto de um quadrado. Devemos criar uma interface Shape com o metodo comum: computeArea()
+* Interface Segregation -  Clientes nao devem ser forçados a depender de interfaces que eles não utilizam. Interface pollution. Sinais de violação: métodos com implementação vazia ou retornando null / default / valor dummy ou estourando UnsupportedOperationException (ou similar). Exemplo: ter na interface um metodo findByName e fazer uma classe implementar isto sem precisar.  
+* Dependency Inversion - Trata de acoplamento entre classes. Modulos de alto nivel (Regra de negocios) nao devem depender de módulos de baixo nível (SDKs, métodos de linguaguem). Modulos de alto e baixo niveis devem depender de abstrações. As abstrações, por sua vez, não devem depender de detalhes, mas de abstrações. Ex: tenho um metodo que pega um json e grava no disco. Se eu utilizo funcoes acopladas ao metodo Json e ao disco, eu fico refem destas classes. Solução: enviar a interface como parametro: public void writeReport(Formatter formatter, Writer writer) { Report report = new Report; String report = formatter.format(report); writer.write("My Report");
