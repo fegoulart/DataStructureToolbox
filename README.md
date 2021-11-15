@@ -19,8 +19,20 @@
 * Ensures O(log n) times for **INSERT** and **FIND**
 
 ### Red-Black Tree
+* Self-balancing BST - O(log N) insertions, deletions and retrievals
+* Require a bit less memory
+* Can rebalance faster: Used in situations where the tree will be modified frequently
+* Every node is either red or black
+* The root is black
+* The leaves, which are NULL nodes, are considered black
+* Every red node must have 2 black children. That is, a red node cannot have red children (although a black node can have black children)
+* Every path from a node to its leaves must have the same number of black children
 
 ### AVL Tree
+* One way to implement tree balancing
+* Stores in each node the height of the subtrees rooted at this node
+* For any node, we can check if it is height balanced: heights of left subtree and right subtree differ by no more than 1 
+* We can check and fix the balance at each node though a series of rotations (left or right)
 
 ### BST - Binary Search Tree
 * Binary tree in which every node: left descendents <= parent < right descendents 
