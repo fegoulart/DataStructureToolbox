@@ -54,6 +54,16 @@
 # Rabin-Karp Substring Search
 
 ## Graph
+* Tree is a type of graph (connected without cycles)
+* Directed: "one way street"
+* Undirected: "two way street"
+* Connected graph: there is a path between evey pair of vertices
+* 2 ways of implementing: adjacency list and adjacency matrices
+
+### Graph Search
+* DFS - Depth-first search (visit all nodes starting from root)
+* BFS - Breadth-first search (used for shortest path between 2 nodes)
+
 
 # Topological sort
 * Only for directed and acyclic (DAGs)
