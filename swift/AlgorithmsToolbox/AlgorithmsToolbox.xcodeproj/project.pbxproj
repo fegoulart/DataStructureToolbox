@@ -22,6 +22,7 @@
 		56742A6627FA01B800945636 /* DijkstraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56742A6527FA01B800945636 /* DijkstraNode.swift */; };
 		56742A6827FA028000945636 /* DijkstraEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56742A6727FA028000945636 /* DijkstraEdge.swift */; };
 		56742A6A27FA046000945636 /* DijkstraGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56742A6927FA046000945636 /* DijkstraGraph.swift */; };
+		6CA5651728820DE800B71652 /* AdjacencyMatrixGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA5651628820DE800B71652 /* AdjacencyMatrixGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		56742A6527FA01B800945636 /* DijkstraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstraNode.swift; sourceTree = "<group>"; };
 		56742A6727FA028000945636 /* DijkstraEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstraEdge.swift; sourceTree = "<group>"; };
 		56742A6927FA046000945636 /* DijkstraGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstraGraph.swift; sourceTree = "<group>"; };
+		6CA5651628820DE800B71652 /* AdjacencyMatrixGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyMatrixGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				56742A6527FA01B800945636 /* DijkstraNode.swift */,
 				56742A6727FA028000945636 /* DijkstraEdge.swift */,
 				56742A6927FA046000945636 /* DijkstraGraph.swift */,
+				6CA5651628820DE800B71652 /* AdjacencyMatrixGraph.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				56742A6A27FA046000945636 /* DijkstraGraph.swift in Sources */,
 				56742A5927F9DF6300945636 /* Edge.swift in Sources */,
 				56742A6827FA028000945636 /* DijkstraEdge.swift in Sources */,
+				6CA5651728820DE800B71652 /* AdjacencyMatrixGraph.swift in Sources */,
 				56742A6127F9F46D00945636 /* BFS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
